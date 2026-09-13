@@ -1,10 +1,10 @@
-import Section1 from "./components/section1/section1"
+import Section1 from "./components/Section1/section1"
 import Section2 from "./components/section2/Section2"
 const App = () => {
   return (
-    <div>
-      
+    <div >
       <Section1 />
+      {/* <Section2 /> */}
     </div>
   )
 }

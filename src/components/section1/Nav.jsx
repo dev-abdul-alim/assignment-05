@@ -1,23 +1,46 @@
 import LogoText from '../../assets/logo-text.png'
+import Hamburger from '../../assets/hamburger.png'
 const Nav = () => {
   return (
-    <div className='flex items-center justify-between px-10 py-4 border-b b-gray-300'>
-      <img src={LogoText} alt="" />
+<nav className="sticky h-[10vh] top-0 z-50 bg-white border-b border-gray-300">
+      <div className="flex items-center justify-between px-4 py-4 md:px-10">
 
-      <div className="text-black flex items-center gap-6">
-        <a href="" className='text-red-500'>Home</a>
-        <a href="">Technologies</a>
-        <a href="">Peojects</a>
-        <a href="">About</a>
-        <a href="">Contact</a>
-      </div>
+        {/* Hamburger - Mobile */}
+        <button className="text-2xl md:hidden">
+          {Hamburger}
+        </button>
 
-        <div className='flex items-center justify-between gap-4 px-1 '>
-            <p>Sign In</p>
-            <button className='bg-pink-600 text-white px-5 py-1 rounded-3xl '>Sign In</button>
+        {/* Logo */}
+        <img
+          src={LogoText}
+          alt="Dev Stack"
+          className="w-32 md:w-auto"
+        />
+
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-6 text-black">
+          <a href="#" className="text-pink-700">
+            Home
+          </a>
+          <a href="#">Technologies</a>
+          <a href="#">Projects</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
         </div>
-    </div>
-  )
+
+        {/* Buttons */}
+        <div className="flex items-center gap-2 md:gap-4">
+          <button className="text-sm md:text-base">
+            Sign In
+          </button>
+
+          <button className="bg-pink-600 text-white px-4 py-1.5 md:px-5 md:py-2 rounded-3xl text-sm md:text-base">
+            Sign Up
+          </button>
+        </div>
+
+      </div>
+    </nav>  )
 }
 
 export default Nav
