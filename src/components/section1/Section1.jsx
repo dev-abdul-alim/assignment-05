@@ -2,7 +2,7 @@ import Nav from './Nav'
 import Banner from './Banner'
 const Section1 = () => {
   return (
-    <div className='h-screen bg-amber-500'>
+    <div>
       <Nav />
       <Banner />
     </div>

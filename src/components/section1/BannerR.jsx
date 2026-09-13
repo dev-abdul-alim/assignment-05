@@ -1,9 +1,10 @@
 import React from 'react'
+import BannerStack from '../../assets/banner-stack.png'
 
 const BannerR = () => {
   return (
     <div>
-      <h2>Hello</h2>
+      <img src={BannerStack} alt="" />
     </div>
   )
 }

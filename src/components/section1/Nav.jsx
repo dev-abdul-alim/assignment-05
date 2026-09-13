@@ -1,5 +1,6 @@
 import LogoText from '../../assets/logo-text.png'
 import Hamburger from '../../assets/hamburger.png'
+
 const Nav = () => {
   return (
 <nav className="sticky h-[10vh] top-0 z-50 bg-white border-b border-gray-300">
@@ -7,7 +8,7 @@ const Nav = () => {
 
         {/* Hamburger - Mobile */}
         <button className="text-2xl md:hidden">
-          {Hamburger}
+          <img src={Hamburger} alt="" />
         </button>
 
         {/* Logo */}
