@@ -3,7 +3,7 @@ import Hamburger from '../../assets/hamburger.png'
 
 const Nav = () => {
   return (
-<nav className="sticky h-[10vh] top-0 z-50 bg-white border-b border-gray-300">
+<nav className="sticky  top-0 z-50 bg-amber-50 border-b border-gray-300">
       <div className="flex items-center justify-between px-4 py-4 md:px-10">
 
         {/* Hamburger - Mobile */}
@@ -20,7 +20,7 @@ const Nav = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6 text-black">
-          <a href="#" className="text-pink-700">
+          <a href="#" className="brand-gradient bg-clip-text text-transparent">
             Home
           </a>
           <a href="#">Technologies</a>

@@ -1,4 +1,3 @@
-import technologies from '../../data/technologies.json'
 const StackCards = ({
   technology,
   addToStack,
@@ -52,17 +51,11 @@ const StackCards = ({
 
       <div className='flex justify-center items-center '>
 
-              <button
-        onClick={() => addToStack(technology)}
-        disabled={isAdded}
-        className={`w-full mt-8 py-3 rounded-full text-white transition ${
-          isAdded
-            ? "bg-gray-400 cursor-not-allowed"
-            : "bg-black hover:scale-[1.02]"
-        }`}
-      >
-        {isAdded ? "Added to Stack" : "Add to Stack"}
-      </button>
+          <button onClick={() => addToStack(technology)} disabled={isAdded} className={`w-full mt-8 py-3 rounded-full transition ${ isAdded 
+          ? "bg-red-100/50 border border-red-300 text-black cursor-not-allowed"
+          : "bg-black text-white hover:scale-[1.02]" }`} >
+          {isAdded ? "✓ Added to Stack" : "Add to Stack"}
+          </button>
 
 
 

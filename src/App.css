@@ -182,3 +182,33 @@
     border-right-color: var(--border);
   }
 }
+
+
+
+
+
+
+
+.glass-toast {
+  width: 320px !important;
+  min-height: 80px !important;
+
+  background: rgba(255, 255, 255, 0.35) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  border-radius: 16px !important;
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+
+  padding: 16px 20px !important;
+}
+
+.glass-toast .Toastify__toast-body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}

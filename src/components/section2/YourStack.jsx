@@ -7,7 +7,7 @@ const YourStack = ({
 }) => {  
   
   return (
-    <div className="w-full max-w-sm border border-gray-300 rounded-2xl px-5 py-6 tracking-tighter    bg-transparent shadow-2xl">
+    <div className="w-full max-w-sm border border-gray-300 rounded-2xl px-5 py-6 tracking-tighter bg-transparent shadow-2xl">
 
       <div className="mb-6">
         <h1 className="font-bold text-2xl">
@@ -15,8 +15,8 @@ const YourStack = ({
         </h1>
 
         <p className="text-gray-500">
-          {selectedTechnologies.length} Technology{selectedTechnologies.length !== 1 && "ies"} Selected
-        </p>
+          {selectedTechnologies.length === 0 ? "No Technology Selected" : `${selectedTechnologies.length} ${selectedTechnologies.length=== 1 ? "Technology" : "Technologies"} Selected`}
+          </p>     
       </div>
 
       <div className="flex flex-col items-center justify-center gap-5 min-h-32">
@@ -25,8 +25,8 @@ const YourStack = ({
 
         {selectedTechnologies.length === 0 ? (
 
-          <p className="text-gray-400 text-center py-8">
-            No technologies added
+          <p className="w-full sm:max-w-60 lg:w-40 border border-dashed border-gray-300 rounded-xl text-gray-400 text-center py-8">
+            Your Stack is empty
           </p>
 
         ) : (

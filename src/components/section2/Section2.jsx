@@ -1,55 +1,95 @@
-import { useState } from "react";
-import technologies from '../../data/technologies.json'
+import { useEffect, useState } from "react"; 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import StackCards from "./StackCards"
 import YourStack from "./YourStack"
 
 const Section2 = () => {
+
+  const [technologies, setTechnologies] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/technologies.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setTechnologies(data);
+        setLoading(false);
+      });
+  }, []);
   
-  const [selectedTechnologies, setSelectedTechnologies] = useState([]);
-  const [toast, setToast] = useState("");
+    const [selectedTechnologies, setSelectedTechnologies] = useState([]);
 
-  const addToStack = (technology) => {
-    const alreadyAdded = selectedTechnologies.some(
-      (item) => item.id === technology.id
+    const removeFromStack = (id) => {
+      setSelectedTechnologies(
+       selectedTechnologies.filter(
+        (technology) => technology.id !== id
+        )
+        );
+    };
+
+    const removeAll = () => {
+        setSelectedTechnologies([]);
+      };
+
+    const addToStack = (technology) => {
+      const alreadyAdded = selectedTechnologies.some(
+        (item) => item.id === technology.id
+      )
+
+      if (alreadyAdded) {
+       toast.error("Already added")
+        return
+      }
+
+      setSelectedTechnologies([
+        ...selectedTechnologies,
+      technology
+      ])
+
+          toast.success(
+          <div className="flex items-center gap-3 w-full">
+            <img
+              src={technology.icon}
+              alt={technology.name}
+              className="w-10 h-10 object-contain shrink-0"
+            />
+
+            <div className="flex-1 min-w-0">
+              <h3 className="font-semibold text-black truncate">
+                {technology.name}
+              </h3>
+
+              <p className="text-sm text-gray-500">
+                {technology.category}
+              </p>
+            </div>
+          </div>,
+        {
+          autoClose: 1000,
+          closeButton: true,
+          className: "glass-toast",
+        }
+         )
+    }
+
+
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-amber-50">
+        <p className="text-xl font-semibold">
+          Loading technologies...
+        </p>
+      </div>
     );
-
- if (alreadyAdded) {
-    setToast("Already added");
-
-    setTimeout(() => {
-      setToast("");
-    }, 2000);
-
-    return;
   }
-
-  setSelectedTechnologies([
-    ...selectedTechnologies,
-    technology
-  ]);
-
-  setToast("Successfully added");
-
-  setTimeout(() => {
-    setToast("");
-  }, 1000);
-};
-  const removeFromStack = (id) => {
-    setSelectedTechnologies(
-      selectedTechnologies.filter((technology) => technology.id !== id)
-    );
-  };
-
-  const removeAll = () => {
-    setSelectedTechnologies([]);
-  };
-
 
 
   return (
     <div className='min-h-screen bg-amber-50'>
       <div className="flex-col px-20 py-10 w- mb-7">
-        <h1 className="font-bold text-4xl mb-2">Explore the <span className="bg-linear-to-r from-fuchsia-400 to-fuchsia-700 font- bg-clip-text text-transparent">Technologies</span></h1>
+        <h1 className="font-bold text-4xl mb-2">Explore the <span className="bg-linear-to-r brand-gradient font- bg-clip-text text-transparent">Technologies</span></h1>
         <p className="text-gray-500">Pick one technology per category to build your ideal stack</p>
       </div>
 
@@ -67,20 +107,26 @@ const Section2 = () => {
           )}
         </div>
 
-        <div className="px-5 mx-h-80 w-full lg:w-75 lg:sticky lg:top-5  self-start">
+        <div className="px-5 items-center w-full lg:w-75 lg:sticky lg:top-5  self-start">
           <YourStack 
-          selectedTechnologies={selectedTechnologies}
-          removeFromStack={removeFromStack}
-          removeAll={removeAll}/>
+            selectedTechnologies={selectedTechnologies}
+            removeFromStack={removeFromStack}
+            removeAll={removeAll}
+          />
         </div>
 
       </div>
 
-      {toast && (
-        <div className="fixed bottom-5 right-5 z-50 w-80 flex items-center gap-4 px-5 py-4 bg-green-100/50 border border-green-300 rounded-2xl shadow-lg">
-          {toast}
-        </div>
-      )}
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={1000}
+        hideProgressBar
+        newestOnTop
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
     </div>
   )
 }
