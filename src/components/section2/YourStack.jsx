@@ -1,30 +1,83 @@
 import React from 'react'
 
-const YourStack = () => {
+const YourStack = ({
+  selectedTechnologies,
+  removeFromStack,
+  removeAll
+}) => {  
+  
   return (
-    <div className="w-full max-w-sm border border-gray-300 rounded-2xl px-5 py-6 tracking-tighter bg-transparent shadow-2xl">
+    <div className="w-full max-w-sm border border-gray-300 rounded-2xl px-5 py-6 tracking-tighter    bg-transparent shadow-2xl">
 
-      {/* Heading */}
       <div className="mb-6">
         <h1 className="font-bold text-2xl">
           Your Stack
         </h1>
 
         <p className="text-gray-500">
-          2 Technology Selected
+          {selectedTechnologies.length} Technology{selectedTechnologies.length !== 1 && "ies"} Selected
         </p>
       </div>
 
-      {/* Stack content */}
       <div className="flex flex-col items-center justify-center gap-5 min-h-32">
 
-        <div>
-          <span className="text-gray-400">
-            No technologies added
-          </span>
-        </div>
+              <div className="mt-6 space-y-3">
 
-        <button className="border border-gray-700 w-full sm:w-30 rounded-2xl h-8 hover:bg-gray-100 transition">
+        {selectedTechnologies.length === 0 ? (
+
+          <p className="text-gray-400 text-center py-8">
+            No technologies added
+          </p>
+
+        ) : (
+
+          selectedTechnologies.map((technology) => (
+
+            <div
+              key={technology.id}
+              className="flex items-center gap-3 border border-gray-200 rounded-xl px-3 py-3"
+            >
+
+              <img
+                src={technology.icon}
+                alt={technology.name}
+                className="w-8 h-8"
+              />
+
+
+              <div className="flex-1 min-w-0">
+
+                <h3 className="font-semibold truncate">
+                  {technology.name}
+                </h3>
+
+                <p className="text-sm text-gray-500">
+                  {technology.category}
+                </p>
+
+              </div>
+
+
+              <button
+                onClick={() => removeFromStack(technology.id)}
+                className="text-gray-400 hover:text-red-500 text-xl"
+              >
+                ×
+              </button>
+
+            </div>
+
+          ))
+
+        )}
+
+      </div>
+
+
+        <button
+          onClick={removeAll}
+          disabled={selectedTechnologies.length === 0}
+          className="text-sm text-red-500 border h-10 w-26 rounded-2xl border-red-500 disabled:text-gray-300">
           Remove All
         </button>
 

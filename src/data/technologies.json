@@ -7,7 +7,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
-    "badge": "Popular"
+    "badge": "Popular",
+    "themeColor": "#F7DF1E"
   },
   {
     "id": "typescript",
@@ -17,7 +18,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/TypeScript.svg",
     "rating": 4.8,
     "difficulty": "Intermediate",
-    "badge": "Trending"
+    "badge": "Trending",
+    "themeColor": "#3178C6"
   },
   {
     "id": "nodejs",
@@ -27,7 +29,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Node.js.svg",
     "rating": 4.8,
     "difficulty": "Intermediate",
-    "badge": "Popular"
+    "badge": "Popular",
+    "themeColor": "#339933"
   },
   {
     "id": "express",
@@ -37,7 +40,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Express.svg",
     "rating": 4.7,
     "difficulty": "Beginner-Friendly",
-    "badge": "Lightweight"
+    "badge": "Lightweight",
+    "themeColor": "#000000"
   },
   {
     "id": "nextjs",
@@ -47,7 +51,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Next.js.svg",
     "rating": 4.8,
     "difficulty": "Intermediate",
-    "badge": "Popular"
+    "badge": "Popular",
+    "themeColor": "#000000"
   },
   {
     "id": "tailwindcss",
@@ -57,7 +62,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
     "rating": 4.8,
     "difficulty": "Beginner-Friendly",
-    "badge": "Trending"
+    "badge": "Trending",
+    "themeColor": "#06B6D4"
   },
   {
     "id": "mongodb",
@@ -67,7 +73,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/MongoDB.svg",
     "rating": 4.7,
     "difficulty": "Beginner-Friendly",
-    "badge": "Popular"
+    "badge": "Popular",
+    "themeColor": "#47A248"
   },
   {
     "id": "mysql",
@@ -77,7 +84,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/MySQL.svg",
     "rating": 4.7,
     "difficulty": "Beginner-Friendly",
-    "badge": "Reliable"
+    "badge": "Reliable",
+    "themeColor": "#4479A1"
   },
   {
     "id": "python",
@@ -87,7 +95,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Python.svg",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
-    "badge": "Popular"
+    "badge": "Popular",
+    "themeColor": "#3776AB"
   },
   {
     "id": "docker",
@@ -97,7 +106,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Docker.svg",
     "rating": 4.7,
     "difficulty": "Intermediate",
-    "badge": "Essential"
+    "badge": "Essential",
+    "themeColor": "#2496ED"
   },
   {
     "id": "git",
@@ -107,7 +117,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Git.svg",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
-    "badge": "Essential"
+    "badge": "Essential",
+    "themeColor": "#F05032"
   },
   {
     "id": "github",
@@ -117,7 +128,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/GitHub.svg",
     "rating": 4.9,
     "difficulty": "Beginner-Friendly",
-    "badge": "Popular"
+    "badge": "Popular",
+    "themeColor": "#181717"
   },
   {
     "id": "firebase",
@@ -127,7 +139,8 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Firebase.svg",
     "rating": 4.6,
     "difficulty": "Beginner-Friendly",
-    "badge": "Fast Setup"
+    "badge": "Fast Setup",
+    "themeColor": "#FFCA28"
   },
   {
     "id": "redis",
@@ -137,6 +150,7 @@
     "icon": "https://icon.icepanel.io/Technology/svg/Redis.svg",
     "rating": 4.6,
     "difficulty": "Intermediate",
-    "badge": "High-Speed"
+    "badge": "High-Speed",
+    "themeColor": "#DC382D"
   }
 ]
