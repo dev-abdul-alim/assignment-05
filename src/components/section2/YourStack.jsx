@@ -35,8 +35,7 @@ const YourStack = ({
 
             <div
               key={technology.id}
-              className="flex items-center gap-3 border border-gray-200 rounded-xl px-3 py-3"
-            >
+              className="flex items-center gap-3 border border-gray-200 rounded-xl px-3 py-3">
 
               <img
                 src={technology.icon}
